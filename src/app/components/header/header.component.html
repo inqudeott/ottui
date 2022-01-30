@@ -1,0 +1,22 @@
+<nav class="navbar navbar-expand-lg py-3 header" *ngIf="router.url !== '/profile'">
+    <div class="container d-flex justify-content-between">
+        <div>
+            <h1 class="mb-0 header-title">Inqude Movie Info</h1>
+            <kendo-dropdownlist
+                [data]="listItems"
+                [iconClass]="'k-i-arrow-chevron-down'"
+                [style.width.px]="160"
+                [(value)]="selected"
+                (valueChange)="onCurrencyChange($event)"
+            >
+                <ng-template kendoDropDownListValueTemplate let-dataItem>
+                    Language {{ dataItem }}
+                </ng-template>
+            </kendo-dropdownlist>
+        </div>
+        <div class="profile-wrapper d-flex flex-column align-self-center" routerLink="/profile">
+            <div class="profile-image"></div>
+            <div class="text-white-50">InqudeUser</div>
+        </div>
+    </div>
+</nav>
